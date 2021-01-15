@@ -15,5 +15,5 @@ jobs:
     steps:
       - name: Reuse environment variable
         env:
-          TEST_TOKEN: ${{ $TEST_TOKEN2 }}
+          TEST_TOKEN: ${{ env.TEST_TOKEN2 }}
         run: echo $TEST_TOKEN
