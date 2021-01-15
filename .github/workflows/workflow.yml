@@ -1,0 +1,15 @@
+name: test
+
+jobs:
+  test:
+    name: test
+    runs-on: macOS-latest
+    env:
+      TEST_TOKEN: token
+      TEST_TOKEN2: token2
+
+    steps:
+      - name: Reuse environment variable
+        env:
+          TEST_TOKEN: ${{ $TEST_TOKEN2 }}
+        run: echo $TEST_TOKEN
